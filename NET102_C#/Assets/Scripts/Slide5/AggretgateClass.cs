@@ -12,7 +12,7 @@ public class AggretgateClass : MonoBehaviour
         int min = list.Min();
         Debug.Log("min value: " + min);
         // total
-        int total = list.Min();
+        int total = list.Sum();
         Debug.Log("total: " + total);
 
         var nums = new[] { 1, 2, 3, 4 };

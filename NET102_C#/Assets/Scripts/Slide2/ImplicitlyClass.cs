@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ImplicitlyClass : MonoBehaviour
 {
-    //var a = 10;
+    //var a = 10; 
+    // báo lỗi CS0825 khi biến "var" khai báo ngoài cục bộ
     void Start()
     {
         var local = 10;

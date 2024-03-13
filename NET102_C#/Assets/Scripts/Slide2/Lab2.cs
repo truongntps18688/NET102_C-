@@ -5,22 +5,35 @@ using UnityEngine;
 
 public class Lab2 : MonoBehaviour
 {
-    dynamic x = 10;
     void Start()
     {
-        // bài 1
-        //Debug.Log(x);
-        // 1b
+    }
+    //------------
+    dynamic x = 10;
+    public void bai1a()
+    {
+        //Debug.Log("x: " + x);
+    }
+    public void bai1b()
+    {
         getDetail(10);
         getDetail("games");
         getDetail(true);
         getDetail(9.5);
+    }
+    public void getDetail(dynamic value)
+    {
+        //Debug.Log("value: " + value);
+    }
 
-        // 1c
+    public void bai1c()
+    {
         userDataLab2 data = new userDataLab2("2024", "Hide on bush", 100);
         data.getInfo();
-
-
+    }
+    //-----------
+    public void bai2a()
+    {
         // bài 2:
         var userInfp = new
         {
@@ -38,8 +51,9 @@ public class Lab2 : MonoBehaviour
         Debug.Log("isplaying: " + userInfp.isplaying);
         Debug.Log("bag skins: " + userInfp.bag.skins);
         Debug.Log("bag cups: " + userInfp.bag.cups);
-
-        // 2b
+    }
+    public void bai2b()
+    {
         int y = 10;
         Action<int> AnonymousMethod = delegate (int x)
         {
@@ -49,8 +63,9 @@ public class Lab2 : MonoBehaviour
             Debug.Log("sub: " + sub);
         };
         AnonymousMethod(5);
-
-        // bài 3
+    }
+    public void bai3()
+    {
         List<float> datafloat = new List<float>() { 10, 9, 8, 7.5f, 2, 1.4f };
         userDataLab2Bai3 userDataLab2Bai3 = new userDataLab2Bai3("bài 3_2", "bài 3_2");
         foreach (var item in datafloat)
@@ -58,29 +73,24 @@ public class Lab2 : MonoBehaviour
             userDataLab2Bai3.scores.Add(item);
         }
         // or
-        //userDataLab2Bai3.scores.AddRange(datafloat);
-
-    }
-    public void getDetail(dynamic a)
-    {
-        //Debug.Log(a);
+        userDataLab2Bai3.scores.AddRange(datafloat);
     }
 }
 [SerializeField]
 public class userDataLab2
 {
-    public string ID;
-    public string userName;
+    public string id;
+    public string username;
     public int level;
-    public userDataLab2(string _ID, string _userName, int _level)
+    public userDataLab2(string id, string username, int level)
     {
-        ID = _ID;
-        userName = _userName;
-        level = _level;
+        this.id = id;
+        this.username = username;
+        this.level = level;
     }
     public void getInfo()
     {
-        Debug.Log("ID: " + ID + " |userName: " + userName + " |level: " + level);
+        Debug.Log("ID: " + id + " |userName: " + username + " |level: " + level);
     }
 }
 
