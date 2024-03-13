@@ -8,6 +8,10 @@ public class StringWriteReadClass : MonoBehaviour
 {
     void Start()
     {
+        
+    }
+    public void test()
+    {
         string data = "hello word!";
 
         // lưu dữ liệu vào 1 chuỗi

@@ -8,19 +8,24 @@ public class TextWriterClass : MonoBehaviour
 {
     void Start()
     {
+    }
+    public void testWrite()
+    {
         string path = "data.txt";
         string data = "hello word!";
 
         // khởi tạo đối tượng
-        using (TextWriter fs = new StreamWriter(path))
+        using (TextWriter tw = new StreamWriter(path))
         {
-            // ghi dữ liệu vào file
-            fs.WriteLine(data);
+            // ghi dữ liệu
+            tw.WriteLine(data);
         }
+    }
+    public void testRead()
+    {
+        string path = "data.txt";
 
-        // đọc file
-
-        using (StreamReader tw  = new StreamReader(path))
+        using (StreamReader tw = new StreamReader(path))
         {
             string datatxt = tw.ReadToEnd(); // đọc tất cả
             Debug.Log(datatxt);
@@ -39,5 +44,4 @@ public class TextWriterClass : MonoBehaviour
             Debug.Log(datatxt);
         }
     }
-
 }

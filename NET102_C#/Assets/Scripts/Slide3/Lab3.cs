@@ -108,8 +108,6 @@ public class Lab3 : MonoBehaviour
 
     public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
     {
-        Directory.CreateDirectory(target.FullName);
-
         foreach (FileInfo fi in source.GetFiles())
         {
             fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
