@@ -7,7 +7,8 @@ public class LINQClass : MonoBehaviour
 {
     void Start()
     {
-        string[] name = { "CSO", "PUPG", "Genshin impact", "Liên minh", "Gunny", "GTA 5", "liên quân" };
+        string[] name = { "CSO", "PUPG", "Genshin impact", 
+            "Liên minh", "Gunny", "GTA 5", "liên quân" };
 
         var myLinqQuery = name.Where(item => item.Contains('n'));
 

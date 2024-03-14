@@ -49,7 +49,7 @@ public class LambdaClass : MonoBehaviour
             }
             return x;
         };
-
+        // cho biết kết quả 
         Func<int, int> test1 = x => x + 3;
         test1(1);
         Func<int, bool> test2 = x => x == 2;
