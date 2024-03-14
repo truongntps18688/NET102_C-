@@ -7,14 +7,24 @@ public class AggretgateClass : MonoBehaviour
 {
     void Start()
     {
-        List<int> list = new List<int>() { 1, 3, 4, 5, 6, -1};
+
+    }
+    public void testMin()
+    {
+        List<int> list = new List<int>() { 1, 3, 4, 5, 6, -1 };
         // min
         int min = list.Min();
         Debug.Log("min value: " + min);
+    }
+    public void testTotal()
+    {
+        List<int> list = new List<int>() { 1, 3, 4, 5, 6, -1 };
         // total
         int total = list.Sum();
         Debug.Log("total: " + total);
-
+    }
+    public void AggregateTest()
+    {
         var nums = new[] { 1, 2, 3, 4 };
         var sum = nums.Aggregate((a, b) => a + b);
         Debug.Log(sum); // output: 10 (1+2+3+4)
@@ -27,6 +37,5 @@ public class AggretgateClass : MonoBehaviour
         var multiplied = multipliers.Aggregate(5, (a, b) => a * b);
         Debug.Log(multiplied); //Output: 1200000 ((((5*10)*20)*30)*40)
     }
-
 }
 

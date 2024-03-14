@@ -8,22 +8,32 @@ public class ConversionClass : MonoBehaviour
 {
     void Start()
     {
-        // ép kiểu từ arr về list
+        
+    }
+    public void testToList()
+    {
+        string[] arr = { "Liên Minh", "CSO", "GTA 5", "Genshin impact", "PUPG", "Gunny" };
+
+        List<string> listStr = arr.ToList();
+
+        foreach (var item in listStr)
+        {
+            Debug.Log(item);
+        }
+    }
+    public void testToArray()
+    {
         string[] arr = { "Liên Minh", "CSO", "GTA 5", "Genshin impact", "PUPG", "Gunny" };
 
         string[] newArr = arr.ToArray();
 
         foreach (var item in newArr)
         {
-            //Debug.Log(item);
+            Debug.Log(item);
         }
-
-        List<string> listStr = arr.ToList();
-        foreach (var item in listStr)
-        {
-            //SDebug.Log(item);
-        }
-
+    }
+    public void testToLookup()
+    {
         // toLookup
         List<EnemyConversion> listEnemy = new List<EnemyConversion>();
         listEnemy.Add(new EnemyConversion("Chó", "thú"));
@@ -43,6 +53,9 @@ public class ConversionClass : MonoBehaviour
             }
             Debug.Log("----------------");
         }
+    }
+    public void testCast()
+    {
         // ép kiểu 
         ArrayList list = new ArrayList { 10, 20, 30 };
 
@@ -52,7 +65,9 @@ public class ConversionClass : MonoBehaviour
         {
             Debug.Log(item);
         }
-
+    }
+    public void testCast1()
+    {
         // ép kiểu không hợp lệ
         var mixedList = new List<object>() { 1, "two", 3, "four", 5 };
 
@@ -64,7 +79,9 @@ public class ConversionClass : MonoBehaviour
         {
             Debug.Log("Exception: " + ex);
         }
-
+    }
+    public void testOfTypeToList()
+    {
         // OfType
         var mixedListOfType = new List<object>() { 1, "two", 3, "four", 5, true, false };
 
@@ -82,17 +99,21 @@ public class ConversionClass : MonoBehaviour
         {
             Debug.Log(str);
         }
-
+    }
+    public void testAsEnumerable()
+    {
         //AsEnumerable
-        Debug.Log("---------");
         // tạo 1 list Enumerable.Range(a, b); tạo list số từ a đến (a + b -1) 
-        var numbers = Enumerable.Range(3, 10); 
+        var numbers = Enumerable.Range(3, 10);
         var asEnumerableNumbers = numbers.AsEnumerable();
 
         foreach (var number in asEnumerableNumbers)
         {
             Debug.Log(number);
         }
+    }
+    public void testToDictionary()
+    {
         //LINQ ToDictionary
 
         List<EnemyConversion> listEnemyDir = new List<EnemyConversion>();
@@ -109,7 +130,6 @@ public class ConversionClass : MonoBehaviour
             Debug.Log("key: " + item.Key + " |value: " + item.Value);
         }
     }
-
 }
 
 public class EnemyConversion

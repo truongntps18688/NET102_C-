@@ -20,11 +20,29 @@ public class Lab5 : MonoBehaviour
         list.Add(new UserAccountLab5("CSO", 8, 55.5f, "Game", 1000));
         list.Add(new UserAccountLab5("CSGO", 6, 85.5f, "Game", 500));
 
-        // 1
+        // 1a
         foreach (var item in list)
         {
             Debug.Log("Name: " + item.name);
         }
+        //1b
+        var newRank = list.OrderBy(item => item.rank);
+        foreach (var item in newRank)
+        {
+            Debug.Log(item.rank);
+        };
+        // 1c
+        var newNameSKin = list.OrderBy(item => item.name).ThenBy(item => item.skin);
+        foreach (var item in newNameSKin)
+        {
+            Debug.Log("name: " + item.name + " |skin: " + item.skin);
+        };
+        // 1d
+        var newNameB = list.Where(item => item.name.StartsWith("B")).ToList();
+        foreach (var item in newNameB)
+        {
+            Debug.Log("name: " + item.name);
+        };
         // 2
         //2a
         var newRate50 = list.SkipWhile(item => item.winRate > 50);
@@ -39,27 +57,6 @@ public class Lab5 : MonoBehaviour
         Debug.Log("tổng số tài khoản: " + list.Count);
 
         //3
-        //3a
-        var newRank = list.OrderBy(item => item.rank);
-        foreach (var item in newRank)
-        {
-            Debug.Log(item.rank);
-        };
-
-        //3b
-        var newNameSKin = list.OrderBy(item => item.name).ThenBy(item => item.skin);
-        foreach (var item in newNameSKin)
-        {
-            Debug.Log("name: " + item.name + " |skin: " + item.skin);
-        };
-        //3c
-        var newNameB = list.Where(item => item.name.StartsWith("L")).ToList();
-        foreach (var item in newNameB)
-        {
-            Debug.Log("name: " + item.name);
-        };
-
-        //4
         Debug.Log("000000000");
         var newlistKeyValue = list.ToLookup(item => item.type);
         foreach (var item in newlistKeyValue)

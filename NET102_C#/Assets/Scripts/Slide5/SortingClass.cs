@@ -7,6 +7,11 @@ public class SortingClass : MonoBehaviour
 {
     void Start()
     {
+
+       
+    }
+    public void testOrderByRank()
+    {
         //OrderBy
         List<leaderboard> listleaderboard = new List<leaderboard>();
         listleaderboard.Add(new leaderboard("Tú Bà", 1, 90));
@@ -22,6 +27,17 @@ public class SortingClass : MonoBehaviour
         {
             Debug.Log(item.rank);
         }
+    }
+    public void testOrderByName()
+    {
+        //OrderBy
+        List<leaderboard> listleaderboard = new List<leaderboard>();
+        listleaderboard.Add(new leaderboard("Tú Bà", 1, 90));
+        listleaderboard.Add(new leaderboard("Thúy Kiều", 3, 60));
+        listleaderboard.Add(new leaderboard("Thúy Vân", 4, 60));
+        listleaderboard.Add(new leaderboard("Trọng Thủy", 2, 75));
+        listleaderboard.Add(new leaderboard("Mị Châu", 5, 55.5f));
+        listleaderboard.Add(new leaderboard("Báo Hồng", 6, 45));
 
         // sắp xếp tăng dần theo tên 
         var listName = listleaderboard.OrderBy(e => e.name);
@@ -29,7 +45,9 @@ public class SortingClass : MonoBehaviour
         {
             Debug.Log(item.name);
         }
-
+    }
+    public void testLINQqueries()
+    {
         //LINQ OrderBy viết theo cách LINQ queries
 
         // mảng số
@@ -52,7 +70,9 @@ public class SortingClass : MonoBehaviour
                                     where fruit.StartsWith("m")
                                     orderby fruit
                                     select fruit;
-
+    }
+    public void testThenBy()
+    {
         // sắp xếp theo nhiều tiêu chí 
         List<GameAll> gameAlls = new List<GameAll>();
         gameAlls.Add(new GameAll("FPS", 70));
