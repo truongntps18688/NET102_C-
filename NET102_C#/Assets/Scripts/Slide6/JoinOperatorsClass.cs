@@ -57,7 +57,9 @@ public class JoinOperatorsClass : MonoBehaviour
         );
         foreach (var item in result)
         {
-            Debug.Log("ID: " + item.id + " |name: " + item.name +" |price: " + item.price + " |des: " + item.des);
+            Debug.Log("ID: " + item.id + " |name: " + item.name);
+            Debug.Log("price: " + item.price + " |des: " + item.des);
+            Debug.Log("-----------");
         }
     }
     public void LINQLeftJoin()
@@ -80,7 +82,9 @@ public class JoinOperatorsClass : MonoBehaviour
         
         foreach (var item in leftJoinResult)
         {
-            Debug.Log("ID: " + item.id + " |name: " + item.name + " |price: " + item.price + " |des: " + item.des);
+            Debug.Log("ID: " + item.id + " |name: " + item.name);
+            Debug.Log("price: " + item.price + " |des: " + item.des);
+            Debug.Log("-----------");
         }
 
         var result = listBrand.GroupJoin(listProductJoin,
@@ -98,7 +102,9 @@ public class JoinOperatorsClass : MonoBehaviour
         );
         foreach (var item in result)
         {
-            Debug.Log("ID: " + item.id + " |name: " + item.name + " |price: " + item.price + " |des: " + item.des);
+            Debug.Log("ID: " + item.id + " |name: " + item.name);
+            Debug.Log("price: " + item.price + " |des: " + item.des);
+            Debug.Log("-----------------");
         }
     }
     public void LINQunion()
@@ -161,3 +167,5 @@ public class BrandJoin
         name = _name;
     }
 }
+
+

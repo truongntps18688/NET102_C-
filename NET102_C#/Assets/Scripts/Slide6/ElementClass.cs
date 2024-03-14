@@ -29,17 +29,11 @@ public class ElementClass : MonoBehaviour
         Debug.Log("First int: " + nums.First());
         Debug.Log("First int âm: " + nums.First(i => i < 0));
         Debug.Log("First str: " + strings.First());
-        try
-        {
-            // báo lỗi InvalidOperationException khi list không có giá trị
-            Debug.Log("First str null: " + stringsNull.First());
-            // báo lỗi InvalidOperationException khi không có phần tử thõa mãn điều kiện
-            Debug.Log("First int âm null: " + nums.First(i => i < -10));
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+
+        // báo lỗi InvalidOperationException khi list không có giá trị
+        Debug.Log("First str null: " + stringsNull.First());
+        // báo lỗi InvalidOperationException khi không có phần tử thõa mãn điều kiện
+        Debug.Log("First int âm null: " + nums.First(i => i < -10));
     }
     public void LINQFirstOrDefault()
     {
@@ -48,21 +42,14 @@ public class ElementClass : MonoBehaviour
         List<int> numsDefNull = new List<int>() { };
         List<string> stringsDef = new List<string> { null, "T1", "T2" };
 
-
         Debug.Log("First: " + numsDef.FirstOrDefault());
         Debug.Log("First: " + numsDefNull.FirstOrDefault());
-        try
-        {
-            Debug.Log("First: " + numsDefNull.FirstOrDefault().ToString());
-            Debug.Log("First str: " + stringsDef.FirstOrDefault(i => i.Contains("T")));
-            //cố gắng lấy phần tử đầu tiên của nhưng list không có phần tử nào 
-            //thì giá trị sẽ trả về null, mà khi chúng ta cố gắng gọi phương thức
-            //cho 1 giá trị null thì sẽ sảy ra Exception
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+
+        Debug.Log("First: " + numsDefNull.FirstOrDefault().ToString());
+        Debug.Log("First str: " + stringsDef.FirstOrDefault(i => i.Contains("T")));
+        //cố gắng lấy phần tử đầu tiên của nhưng list không có phần tử nào 
+        //thì giá trị sẽ trả về null, mà khi chúng ta cố gắng gọi phương thức
+        //cho 1 giá trị null thì sẽ sảy ra Exception
     }
     public void LINQLast()
     {
@@ -71,20 +58,15 @@ public class ElementClass : MonoBehaviour
         List<string> stringsLast = new List<string>() { "Liên minh",
             "Liên quân", "CSO", "CSGO", "GTA 5" };
         List<string> stringsLastNull = new List<string>();
+
         Debug.Log("Last int: " + numsLast.Last());
         Debug.Log("Last int âm: " + numsLast.Last(i => i < 0));
         Debug.Log("Last str: " + stringsLast.Last());
-        try
-        {
-            // báo lỗi InvalidOperationException khi list không có giá trị
-            Debug.Log("Last str null: " + stringsLastNull.Last());
-            // báo lỗi InvalidOperationException khi không có phần tử thõa mãn điều kiện
-            Debug.Log("Last int âm null: " + numsLast.Last(i => i < -10));
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+
+        // báo lỗi InvalidOperationException khi list không có giá trị
+        Debug.Log("Last str null: " + stringsLastNull.Last());
+        // báo lỗi InvalidOperationException khi không có phần tử thõa mãn điều kiện
+        Debug.Log("Last int âm null: " + numsLast.Last(i => i < -10));
     }
     public void LINQLastOrDefault()
     {
@@ -95,18 +77,12 @@ public class ElementClass : MonoBehaviour
 
         Debug.Log("Last: " + numsDef.LastOrDefault());
         Debug.Log("Last: " + numsDefNull.LastOrDefault());
-        try
-        {
-            Debug.Log("Last: " + numsDefNull.LastOrDefault().ToString());
-            Debug.Log("Last str: " + stringsDef.LastOrDefault(i => i.Contains("T")));
-            //cố gắng lấy phần tử cuối cùng của nhưng list không có phần tử nào 
-            //thì giá trị sẽ trả về null, mà khi chúng ta cố gắng gọi phương thức
-            //cho 1 giá trị null thì sẽ sảy ra Exception
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
+
+        Debug.Log("Last: " + numsDefNull.LastOrDefault().ToString());
+        Debug.Log("Last str: " + stringsDef.LastOrDefault(i => i.Contains("T")));
+        //cố gắng lấy phần tử cuối cùng của nhưng list không có phần tử nào 
+        //thì giá trị sẽ trả về null, mà khi chúng ta cố gắng gọi phương thức
+        //cho 1 giá trị null thì sẽ sảy ra Exception
     }
     public void ElementAt_ElementAtOrDefault()
     {

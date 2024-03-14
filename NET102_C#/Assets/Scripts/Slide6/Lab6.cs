@@ -130,3 +130,6 @@ public class ShopLab6
         address = _address;
     }
 }
+
+
+
