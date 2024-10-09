@@ -125,124 +125,179 @@ public class LINQtoObjectsClass : MonoBehaviour
             Debug.Log(item.name + " : " + item.boolean);
         }
     }
-    public void test6()
-    {
-        //string dataSource = "your_server_address";
-        //string initialCatalog = "your_database_name";
-        //bool integratedSecurity = true;
 
-        //string connectionString = $"Data Source={dataSource};Initial Catalog={initialCatalog};Integrated Security={integratedSecurity}";
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext(connectionString))
+
+    public void testSqlClient()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
         //{
-        //    try
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
+        //}
+    }
+    public void testSqlClient1()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
+        //{
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
+
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        var customers = dataContext.Customers.ToList();
-        //        foreach (var customer in customers)
+        //        string sql = "SELECT Name FROM Player WHERE Id=1"; //To select only 1 user
+        //        dbcmd.CommandText = sql;
+        //        using (IDataReader reader = dbcmd.ExecuteReader())
         //        {
-        //            Console.WriteLine($"CompanyName: {customer.CompanyName}");
+        //            while (reader.Read())
+        //            {
+        //                string NamePlayer = (string)reader["Name"];
+        //                string Name = "Name: " + NamePlayer;
+        //                Debug.Log(Name); //Display Name in GameObject Console
+        //            }
         //        }
         //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
-        //    }
         //}
     }
-    public void test7()
+    public void testSqlClient2()
     {
-        //string dataSource = "your_server_address";
-        //string initialCatalog = "your_database_name";
-        //bool integratedSecurity = true;
-
-        //string connectionString = $"Data Source={dataSource};Initial Catalog={initialCatalog};Integrated Security={integratedSecurity}";
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext(connectionString))
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
         //{
-        //    try
-        //    {
-        //        Customer newCustomer = new Customer();
-        //        newCustomer.ID = 1;
-        //        newCustomer.Name = "LINQ to SQL";
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
 
-        //        dataContext.Customers.InsertOnSubmit(newCustomer);
-        //        dataContext.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
-        //    }
-        //}
-    }
-    public void test8()
-    {
-        //string dataSource = "your_server_address";
-        //string initialCatalog = "your_database_name";
-        //bool integratedSecurity = true;
+        //        // Câu lệnh INSERT để thêm một người chơi mới
+        //        string sql = "INSERT INTO Player (Name, Username, Password) VALUES ('Ashe', 'bestAshe', 'bestAshe')";
+        //        dbcmd.CommandText = sql;
+        //        int rowsAffected = dbcmd.ExecuteNonQuery(); // Thực thi lệnh INSERT và trả về số hàng bị ảnh hưởng
 
-        //string connectionString = $"Data Source={dataSource};Initial Catalog={initialCatalog};Integrated Security={integratedSecurity}";
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext(connectionString))
-        //{
-        //    try
-        //    {
-        //        Customer newCustomer = dataContext.Customer.Where(item => item.ID == 1).FirsOrDefault();
-        //        newCustomer.age = 20;
-        //        newCustomer.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
-        //    }
-        //}
-    }
-    public void test9()
-    {
-        //string dataSource = "your_server_address";
-        //string initialCatalog = "your_database_name";
-        //bool integratedSecurity = true;
-
-        //string connectionString = $"Data Source={dataSource};Initial Catalog={initialCatalog};Integrated Security={integratedSecurity}";
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext(connectionString))
-        //{
-        //    try
-        //    {
-        //        Customer newCustomer = dataContext.Customer.Where(item => item.ID == 1).FirsOrDefault();
-        //        newCustomer.age = 20;
-
-        //        newCustomer.Customer.DeleteOnSumbit(newCustomer);
-        //        newCustomer.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
-        //    }
-        //}
-    }
-    public void test10()
-    {
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext())
-        //{
-        //    try
-        //    {
-        //        var query = from order in dataContext.Orders
-        //                    join customer in dataContext.Customers
-        //                    on order.CustomerID equals customer.CustomerID
-        //                    select new
-        //                    {
-        //                        ID = order.ID,
-        //                        Name = customer.Name,
-        //                        Age = order.Age
-        //                    };
-        //        foreach (var result in query)
+        //        if (rowsAffected > 0)
         //        {
-        //            Console.WriteLine($"OrderID: {result.OrderID}, CustomerName: {result.CustomerName}, OrderDate: {result.OrderDate}");
+        //            Debug.Log("Insert successful! Rows affected: " + rowsAffected); // Hiển thị số dòng đã thêm
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("No rows were inserted.");
         //        }
         //    }
-        //    catch (Exception ex)
+        //}
+    }
+    public void testSqlClient3()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
+        //{
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
+
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        Console.WriteLine(ex.Message);
+        //        string sql = "UPDATE Player SET Name = 'LeeSin sss' WHERE ID = 1";
+        //        dbcmd.CommandText = sql;
+        //        int rowsAffected = dbcmd.ExecuteNonQuery(); // Thực thi lệnh UPDATE và trả về số hàng bị ảnh hưởng
+
+        //        if (rowsAffected > 0)
+        //        {
+        //            Debug.Log("Update successful! Rows affected: " + rowsAffected); // Hiển thị số dòng đã cập nhật
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("No rows were updated.");
+        //        }
         //    }
         //}
     }
+    public void testSqlClient4()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (IDbCommand dbcmd = dbcon.CreateCommand())
+        //{
+        //    // Câu lệnh DELETE để xóa người chơi có ID = 1
+        //    string sql = "DELETE FROM Player WHERE ID = 1"; // Thay ID = 1 bằng ID của người chơi cần xóa
+        //    dbcmd.CommandText = sql;
+        //    int rowsAffected = dbcmd.ExecuteNonQuery(); // Thực thi lệnh DELETE và trả về số hàng bị ảnh hưởng
 
+        //    if (rowsAffected > 0)
+        //    {
+        //        Debug.Log("Delete successful! Rows affected: " + rowsAffected); // Hiển thị số dòng đã xóa
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("No rows were deleted.");
+        //    }
+        //}
+    }
+    public void testSqlClient5()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + // Your SQLServer use with double slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + // Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
+        //{
+        //    dbcon.Open();
+        //    Debug.Log("Connection successful !!!");
+
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
+        //    {
+        //        // Câu lệnh SQL để lấy tên người chơi và các trang thiết bị liên kết
+        //        string sql = @"
+        //    SELECT 
+        //        Player.Name AS PlayerName, 
+        //        Equip.Price, 
+        //        Equip.Quantity 
+        //    FROM 
+        //        Player 
+        //    JOIN 
+        //        Equip ON Player.ID = Equip.playerId;";
+
+        //        dbcmd.CommandText = sql;
+
+        //        using (IDataReader reader = dbcmd.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                string playerName = (string)reader["PlayerName"];
+        //                decimal price = (decimal)reader["Price"];
+        //                int quantity = (int)reader["Quantity"];
+
+        //                Debug.Log($"Player: {playerName}, Price: {price}, Quantity: {quantity}");
+        //            }
+        //        }
+        //    }
+        //}
+    }
 }
 public class test5Class {
     public string id;

@@ -44,74 +44,138 @@ public class Lab7 : MonoBehaviour
             Debug.Log(word); // Output: CHAO, DEN
         }
     }
-    public void bai2()
+    public void bai2a()
     {
-        //a
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext())
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + // Your SQLServer use with double slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + // Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
         //{
-        //    try
+        //    dbcon.Open();
+        //    Debug.Log("Connection successful !!!");
+
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        var query = from order in dataContext.Orders
-        //                    join customer in dataContext.Customers
-        //                    on order.CustomerID equals customer.CustomerID
-        //                    select new
-        //                    {
-        //                        NameOrder = order.Name,
-        //                        NameCustomer = customer.Name,
-        //                    };
-        //        foreach (var result in query)
+        //        // Câu lệnh SQL để lấy thông tin Name và PlayerID
+
+        //        string sql = @"
+        //    SELECT 
+        //        Player.Name AS PlayerName, 
+        //        Equip.playerId AS PlayerID 
+        //    FROM 
+        //        Player 
+        //    JOIN 
+        //        Equip ON Player.ID = Equip.playerId;";
+
+        //        dbcmd.CommandText = sql;
+
+        //        using (IDataReader reader = dbcmd.ExecuteReader())
         //        {
-        //            Console.WriteLine($"OrderID: {result.OrderID}, CustomerName: {result.CustomerName}");
+        //            while (reader.Read())
+        //            {
+        //                string playerName = (string)reader["PlayerName"];
+        //                int playerId = (int)reader["PlayerID"];
+
+        //                // Xuất thông tin ra console
+        //                Debug.Log($"Player Name: {playerName}, Player ID: {playerId}");
+        //            }
         //        }
         //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
         //}
-        //b
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext())
+    }
+    public void bai2b()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
         //{
-        //    try
-        //    {
-        //        Customer newCustomer = new Customer();
-        //        newCustomer.CustomerID = "2024";
-        //        newCustomer.CompanyName = "Độ tộc";
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
 
-        //        dataContext.Customers.InsertOnSubmit(newCustomer);
-        //        dataContext.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
+        //        // Câu lệnh INSERT để thêm một người chơi mới
+
+        //        string sql = @"
+        //        INSERT INTO Player (Name, Username, Password) 
+        //        VALUES ('Mixi Gaming', 'Mixigaming', 'Mixigaming@123');";
+
+        //        dbcmd.CommandText = sql;
+        //        int rowsAffected = dbcmd.ExecuteNonQuery(); 
+
+        //        if (rowsAffected > 0)
+        //        {
+        //            Debug.Log("Insert successful! Rows affected: " + rowsAffected);
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("No rows were inserted.");
+        //        }
         //    }
         //}
-        //c
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext())
+    }
+    public void bai2c()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (dbcon = new SqlConnection(connectionString))
         //{
-        //    try
+        //    dbcon.Open();
+        //    Debug.Log("connection successful !!!");
+
+        //    using (IDbCommand dbcmd = dbcon.CreateCommand())
         //    {
-        //        Customer newCustomer = dataContext.Customer.Where(item => item.CustomerID == "2024").FirsOrDefault();
-        //        newCustomer.CustomerID = "Bộ tộc gaming";
-        //        newCustomer.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
+        //        string sql = @"
+        //            UPDATE Player 
+        //            SET Name = 'Bộ tộc gaming' 
+        //            WHERE Name = 'Mixi Gaming';";
+        //        dbcmd.CommandText = sql;
+        //        int rowsAffected = dbcmd.ExecuteNonQuery(); // Thực thi lệnh UPDATE và trả về số hàng bị ảnh hưởng
+
+        //        if (rowsAffected > 0)
+        //        {
+        //            Debug.Log("Update successful! Rows affected: " + rowsAffected); // Hiển thị số dòng đã cập nhật
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("No rows were updated.");
+        //        }
         //    }
         //}
-        //d
-        //using (CustomerDBDataContext dataContext = new CustomerDBDataContext())
+    }
+    public void bai2d()
+    {
+        //Debug.Log("Hello world !!!"); // Show message on the GameObject Console
+        //string connectionString =
+        //   "Server=TRUONGNT;" + //Your SQLServer use with doble slash \\ for path as: MYPC\\SQLEXPRESS
+        //   "Database=Player;" + //Your database name
+        //   "Integrated Security=True;";
+        //IDbConnection dbcon;
+        //using (IDbCommand dbcmd = dbcon.CreateCommand())
         //{
-        //    try
+        //    // Câu lệnh DELETE để xóa người chơi có ID = 1
+        //    string sql = "DELETE FROM Player WHERE ID = 1"; // Thay ID = 1 bằng ID của người chơi cần xóa
+        //    dbcmd.CommandText = sql;
+        //    int rowsAffected = dbcmd.ExecuteNonQuery(); // Thực thi lệnh DELETE và trả về số hàng bị ảnh hưởng
+
+        //    if (rowsAffected > 0)
         //    {
-        //        Customer newCustomer = dataContext.Customer.Where(item => item.CustomerID == "2024").FirsOrDefault();
-        //        newCustomer.Customer.DeleteOnSumbit(newCustomer);
-        //        newCustomer.SubmitChanges();
+        //        Debug.Log("Delete successful! Rows affected: " + rowsAffected); // Hiển thị số dòng đã xóa
         //    }
-        //    catch (Exception ex)
+        //    else
         //    {
-        //        Console.WriteLine("Lỗi: " + ex.Message);
+        //        Debug.Log("No rows were deleted.");
         //    }
         //}
     }
